@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+
+<body>
+  <div id='stageOne'>
+    <div id='stageOneGrid'>
+      <p class=welcome>Welcome to<br>GOMOKU</p>
+      <button id='create' class='homepageBtn'>PLAY WITH A FRIEND</button>
+      <form>
+        <div id='buttonHolder'>
+          <div id='nrField'>
+            <input type="text" name="id" id='roomId' placeholder="ENTER ROOM ID" required>
+          </div>
+          <div id='joinBtn'>
+            <span id='wrongId'></span>
+            <button type='button' id='join' class='homepageBtn'>JOIN GAME</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div id='stageTwo' style='display: none;'>
+    <div id='stageTwoGrid'>
+      <p class="saving" id='threeDots'>Waiting for
+        opponent<span>.</span><span>.</span><span>.</span></p>
+      <button id='back' class='homepageBtn'>CANCEL</button>
+    </div>
+  </div>
+
+  <div id='game' style='display: none;'>
+    <div id='containerWrapper'>
+      <div class="top">
+        <span id="win" style='display: none;'>You won! :)</span>
+        <span id="loss" style='display: none;'>You lost... :(</span>
+      </div>
+      <div class="container" id="container">
+      </div>
+
+      <span class='turnStatus' id='turnTrue'>Your turn.</span>
+      <span class='turnStatus' id='turnFalse'>Opponent's turn.</span>
+      <button id='home' class='homepageBtn' style='display: none;'>HOME</button>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+
+</html>
